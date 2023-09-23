@@ -3,18 +3,16 @@ import tkinter
 from tkinter import *
 
 web = Flask(__name__)
-web.secret_key='secretkey'
-newQID=int(0)
-userId=None
+
 
 @web.route("/")
 def login():
     return render_template("home.html")
 
 
-@web.route("/calender/")
+@web.route("/schedule/")
 def schedule():
-    return render_template("calender.html")
+    return render_template("schedule.html")
 
 if __name__=="__main__":
     web.run(debug=True,port=7000)
