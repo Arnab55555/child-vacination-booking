@@ -1,0 +1,145 @@
+/* Reset some default styles for consistency */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Define a common font family and background color */
+body {
+    font-family: Arial, sans-serif;
+    background-color: skyblue;
+}
+
+/* Header styles */
+header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navigation menu styles */
+nav {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Hero styles */
+.hero {
+    background-image: url('child2.jpg'); /* Change to your background image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 60px 0 100px 0;
+    margin-bottom: 20px;
+}
+
+/* Section styles */
+.section {
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Appointment form styles */
+.appointment-form {
+    max-width: 400px;
+    margin: 20px auto 0; /* Add margin to the top */
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the "Book an Appointment" text */
+.appointment-form h2 {
+    text-transform: uppercase;
+    text-align: center;
+    color: #010204;
+    font-weight: bold;
+}
+
+/* Style form labels */
+label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #3498db;
+    margin-top: 30px;
+}
+
+/* Style form inputs and textareas */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+select,
+textarea {
+    width: 92%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #3498db;
+}
+
+/* Style the "Proceed to Payment" button */
+#payment-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto; /* Center the button */
+    font-weight: bold;
+}
+
+#payment-button:hover {
+    background-color: #258cd1;
+}
+
+/* Footer styles */
+footer {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.cta-button:hover {
+    list-style-type: none;
+    background-color: #2980b9;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
