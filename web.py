@@ -29,7 +29,7 @@ def services():
 
 @web.route("/Vacination Schedule/",methods=["GET","POST"])
 def schedule():
-    email_reciever = request.form["email1"]
+    email_reciever = request.form["em"]
     try:
         
         email_sender = 'autolibpy@gmail.com'
