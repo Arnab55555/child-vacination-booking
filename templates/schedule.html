@@ -34,7 +34,7 @@
     <!-- Merged Appointment Form Section -->
     <section class="appointment-form">
         <h2>Book an Appointment</h2>
-        <form id="appointment-form">
+        <form id="appointment-form" method="post">
             <label for="patient-name">Patient Name:</label>
             <input type="text" id="patient-name" name="patient-name" required>
             
@@ -64,14 +64,14 @@
             <label for="phone-no">Phone Number:</label>
             <input type="tel" id="phone-no" name="phone-no" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email1">Email:</label>
+            <input type="email" id="email1" name="email1" required>
 
             <label for="payment-amount">Payment Amount:</label>
             <input type="number" id="payment-amount" name="payment-amount" required>
 
             <div class="button-container">
-                <button type="button" id="payment-button">Proceed to Payment</button>
+                <button onclick="location.href='/Vacination Schedule/'" type="button" id="payment-button">Proceed to Payment</button>
             </div>
         </form>
     </section>
