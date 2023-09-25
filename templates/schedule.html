@@ -34,44 +34,44 @@
     <!-- Merged Appointment Form Section -->
     <section class="appointment-form">
         <h2>Book an Appointment</h2>
-        <form class="appointment-form" method="post">
-            <label for="patient-name">Patient Name:</label>
-            <input type="text" id="patientname" name="patient-name" required>
+        <form class="appointment-form" action="/Vacination Schedule/" method="post">
+            <label for="patientname">Patient Name:</label>
+            <input type="text" id="patientname" name="patientname" required>
             
             <label for="patient-info">Patient Information:</label>
-            <textarea id="patient-info" name="patient-info" required></textarea>
+            <textarea id="patient-info" name="patient-info" ></textarea>
 
             <label for="appointment-date">Appointment Date:</label>
-            <input type="date" id="appointment-date" name="appointment-date" required>
+            <input type="date" id="appointment-date" name="appointment-date" >
 
             <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob" required>
+            <input type="date" id="dob" name="dob" >
 
             <label for="slot">Select Slot:</label>
-            <select id="slot" name="slot" required>
+            <select id="slot" name="slot" >
                 <option value="morning">Morning</option>
                 <option value="afternoon">Afternoon</option>
                 <option value="evening">Evening</option>
             </select>
 
             <label for="doctor">Select Doctor:</label>
-            <select id="doctor" name="doctor" required>
+            <select id="doctor" name="doctor" >
                 <option value="prerna">Dr. Prerna</option>
                 <option value="arnab">Dr. Arnab</option>
                 <option value="amsa">Dr. Amsa</option>
             </select>
 
             <label for="phone-no">Phone Number:</label>
-            <input type="tel" id="phone-no" name="phone-no" required>
+            <input type="tel" id="phone-no" name="phone-no" >
 
             <label for="em">Email:</label>
-            <input type="email" id="em" name="em" required>
+            <input type="email" id="em" name="em" >
 
             <label for="payment-amount">Payment Amount:</label>
-            <input type="number" id="payment-amount" name="payment-amount" required>
+            <input type="number" id="payment-amount" name="payment-amount" >
 
             <div class="button-container">
-                <button onclick="location.href='/Vacination Schedule/'" type="button" id="payment-button">Proceed to Payment</button>
+                <button onclick="location.href='/Vacination Schedule/'" type="submit" id="payment-button">Proceed to Payment</button>
             </div>
         </form>
     </section>
