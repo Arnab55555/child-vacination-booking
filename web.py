@@ -19,12 +19,12 @@ def login():
 
 @web.route("/About Us/")
 def aboutUs():
-    return render_template("")
+    return render_template("about.html")
 
 
 @web.route("/Services/")
 def services():
-    return render_template("")
+    return render_template("service.html")
 
 
 @web.route("/Vacination Schedule/", methods=["GET","POST"])
