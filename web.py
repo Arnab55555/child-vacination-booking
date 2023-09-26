@@ -45,7 +45,7 @@ def schedule():
 
             subject = 'Booking Confirmation'
             body = """
-                Welcome to our vacination center
+                Welcome!,"""+name+""" to our vacination center
                 """
 
             em = EmailMessage()
