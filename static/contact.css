@@ -21,6 +21,11 @@ nav {
     padding: 10px;
 }
 
+nav li:hover {
+    background-color: #7f9fbe;
+    color: #fff;
+}
+
 nav ul {
     list-style-type: none;
 }
