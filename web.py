@@ -79,7 +79,7 @@ def doctors():
 
 @web.route("/Contact Us/")
 def contactUs():
-    return render_template("")
+    return render_template("contact.html")
 
 
 
