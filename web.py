@@ -30,9 +30,9 @@ def services():
 @web.route("/Vacination Schedule/", methods=["GET","POST"])
 def schedule():
     print("Hello")
-    
     if request.method == 'POST':
-        name=request.form['patientname']
+        global name
+        name = request.form['patientname']
         print(name)
 
         email_reciever = request.form["em"]
@@ -63,8 +63,10 @@ def schedule():
         except:
             print(email_reciever)
             print("incorrect automation")
-
     return render_template("schedule.html")
+
+
+    
 
 
 @web.route("/Resources/")
@@ -80,6 +82,8 @@ def doctors():
 @web.route("/Contact Us/")
 def contactUs():
     return render_template("contact.html")
+
+
 
 
 
