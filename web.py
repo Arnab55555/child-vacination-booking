@@ -33,40 +33,76 @@ def schedule():
     if request.method == 'POST':
         global name
         name = request.form['patientname']
-        print(name)
+        global emailadd
+        emailadd = request.form['em']
+        # print(name)
 
-        email_reciever = request.form["em"]
-        try:
+        # email_reciever = request.form["em"]
+        # try:
 
-            email_sender = 'autolibpy@gmail.com'
-            email_password = 'epemdruoebcgmtta'
+        #     email_sender = 'autolibpy@gmail.com'
+        #     email_password = 'epemdruoebcgmtta'
 
-            print(email_reciever)
+        #     print(email_reciever)
 
-            subject = 'Booking Confirmation'
-            body = """
-                Welcome!,"""+name+""" to our vacination center
-                """
+        #     subject = 'Booking Confirmation'
+        #     body = """
+        #         Welcome!,"""+name+""" to our vacination center
+        #         """
 
-            em = EmailMessage()
-            em['From'] = email_sender
-            em['To'] = email_reciever
-            em['subject'] = subject
-            em.set_content(body)
+        #     em = EmailMessage()
+        #     em['From'] = email_sender
+        #     em['To'] = email_reciever
+        #     em['subject'] = subject
+        #     em.set_content(body)
 
-            context = ssl.create_default_context()
+        #     context = ssl.create_default_context()
 
-            with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
-                smtp.login(email_sender, email_password)
-                smtp.sendmail(email_sender, email_reciever, em.as_string())
+        #     with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
+        #         smtp.login(email_sender, email_password)
+        #         smtp.sendmail(email_sender, email_reciever, em.as_string())
 
-        except:
-            print(email_reciever)
-            print("incorrect automation")
+        # except:
+        #     print(email_reciever)
+        #     print("incorrect automation")
     return render_template("schedule.html")
 
 
-    
+@web.route("/payment confirmation/", methods=["GET","POST"])
+def paying():
+    print(name)
+    email_reciever = emailadd
+    try:
+
+        email_sender = 'autolibpy@gmail.com'
+        email_password = 'epemdruoebcgmtta'
+
+        print(email_reciever)
+
+        subject = 'Booking Confirmation'
+        body = """
+            Welcome!"""+name+""",
+              to our vacination center
+
+              Please Pay the amount to confirm your vaccination slot
+                """
+
+        em = EmailMessage()
+        em['From'] = email_sender
+        em['To'] = email_reciever
+        em['subject'] = subject
+        em.set_content(body)
+
+        context = ssl.create_default_context()
+
+        with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
+            smtp.login(email_sender, email_password)
+            smtp.sendmail(email_sender, email_reciever, em.as_string())
+
+    except:
+        print(email_reciever)
+        print("incorrect automation")
+    return render_template("paymentconfirmation.html")
 
 
 @web.route("/Resources/")
