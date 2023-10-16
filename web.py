@@ -31,8 +31,16 @@ def services():
 def schedule():
     print("Hello")
     if request.method == 'POST':
-        global name
-        name = request.form['patientname']
+        global childname
+        childname = request.form['patientname']
+        global parentname
+        parentname = request.form['Parent']
+        global appointmentdate
+        appointmentdate = request.form['appointment-date']
+        global dob
+        dob = request.form['dob']
+        global childage
+        childage = request.form['Age']
         global emailadd
         emailadd = request.form['em']
         # print(name)
@@ -70,7 +78,8 @@ def schedule():
 
 @web.route("/payment confirmation/", methods=["GET","POST"])
 def paying():
-    print(name)
+    print(parentname)
+    print(appointmentdate)
     email_reciever = emailadd
     try:
 
@@ -81,7 +90,7 @@ def paying():
 
         subject = 'Booking Confirmation'
         body = """
-            Welcome!"""+name+""",
+            Welcome!"""+parentname+""",
               to our vacination center
 
               Please Pay the amount to confirm your vaccination slot
