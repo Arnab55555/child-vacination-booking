@@ -1,0 +1,120 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the header */
+header {
+    background-color: #0077b6;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+header p {
+    margin: 10px 0;
+}
+
+/* Style the navigation menu */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #0078d4;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+nav {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav li:hover {
+    background-color: #7f9fbe;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Style the sections */
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Style the section headings */
+section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #0077b6;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Style the "Go Back to Home" button */
+.thank-you button {
+    background-color: #0077b6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.thank-you button:hover {
+    background-color: #005689;
+}
+.thank-you {
+    background-image: url('child2.jpg');
+    background-size: cover;
+    background-position: center;
+    color: black;
+    text-align: center;
+    padding: 120px 0;
+}
+
+/* Section styles (Services, Resources, etc.) */
+
+
+/* Footer styles */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
