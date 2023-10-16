@@ -129,7 +129,9 @@ def contactUs():
     return render_template("contact.html")
 
 
-
+@web.route("/successful payment/")
+def successfulPayment():
+    return render_template("thanku.html")
 
 
 if __name__=="__main__":
