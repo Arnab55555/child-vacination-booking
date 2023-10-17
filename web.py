@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session,get_flashed_messages
 import tkinter
 from tkinter import *
+# import sqlite3
 import os
 import email
 from email.message import EmailMessage
@@ -178,6 +179,11 @@ if __name__=="__main__":
 
 
 
+# database_connection = sqlite3.connect("Vaccination.db")
+# database_cursor = database_connection.cursor()
+# inputData = database_cursor.execute("")
+# database_connection.commit()
+# database_connection.close()
 
 
 
