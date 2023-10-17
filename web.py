@@ -28,22 +28,22 @@ def services():
     return render_template("service.html")
 
 
-@web.route("/Vacination Schedule/", methods=["GET","POST"])
+@web.route("/Vacination Schedule/")
 def schedule():
-    print("Hello")
-    if request.method == 'POST':
-        global childname
-        childname = request.form['patientname']
-        global parentname
-        parentname = request.form['Parent']
-        global appointmentdate
-        appointmentdate = request.form['appointment-date']
-        global dob
-        dob = request.form['dob']
-        global childage
-        childage = request.form['Age']
-        global emailadd
-        emailadd = request.form['em']
+    # print("Hello")
+    # if request.method == 'POST':
+    #     global childname
+    #     childname = request.form['patientname']
+    #     global parentname
+    #     parentname = request.form['Parent']
+    #     global appointmentdate
+    #     appointmentdate = request.form['appointment-date']
+    #     global dob
+    #     dob = request.form['dob']
+    #     global childage
+    #     childage = request.form['Age']
+    #     global emailadd
+    #     emailadd = request.form['em']
         # print(name)
 
         # email_reciever = request.form["em"]
@@ -78,44 +78,60 @@ def schedule():
     # else:
     return render_template("schedule.html")
 
+@web.route("/sheduling/", methods=["POST"])
+def registering():
+    global childname
+    childname = request.form['patientname']
+    global parentname
+    parentname = request.form['Parent']
+    global appointmentdate
+    appointmentdate = request.form['appointment-date']
+    global dob
+    dob = request.form['dob']
+    global childage
+    childage = request.form['Age']
+    global emailadd
+    emailadd = request.form['em']
+    return render_template('paymentconfirmation.html')
 
-@web.route("/payment confirmation/", methods=["GET","POST"])
-def paying():
-    # print(parentname)
-    # print(appointmentdate)
-    # email_reciever = emailadd
-    # try:
 
-    #     email_sender = 'autolibpy@gmail.com'
-    #     email_password = 'epemdruoebcgmtta'
+# @web.route("/payment confirmation/", methods=["GET","POST"])
+# def paying():
+#     # print(parentname)
+#     # print(appointmentdate)
+#     # email_reciever = emailadd
+#     # try:
 
-    #     print(email_reciever)
+#     #     email_sender = 'autolibpy@gmail.com'
+#     #     email_password = 'epemdruoebcgmtta'
 
-    #     subject = 'Booking Confirmation'
-    #     body = """
-    #         Welcome! """+parentname+""",
-    #         To our vacination center
-    #         Please Pay the amount to 
-    #         confirm your child """ +childname+ """'s vaccination slot
-    #         on """ +appointmentdate+"""
-    #             """
+#     #     print(email_reciever)
 
-    #     em = EmailMessage()
-    #     em['From'] = email_sender
-    #     em['To'] = email_reciever
-    #     em['subject'] = subject
-    #     em.set_content(body)
+#     #     subject = 'Booking Confirmation'
+#     #     body = """
+#     #         Welcome! """+parentname+""",
+#     #         To our vacination center
+#     #         Please Pay the amount to 
+#     #         confirm your child """ +childname+ """'s vaccination slot
+#     #         on """ +appointmentdate+"""
+#     #             """
 
-    #     context = ssl.create_default_context()
+#     #     em = EmailMessage()
+#     #     em['From'] = email_sender
+#     #     em['To'] = email_reciever
+#     #     em['subject'] = subject
+#     #     em.set_content(body)
 
-    #     with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
-    #         smtp.login(email_sender, email_password)
-    #         smtp.sendmail(email_sender, email_reciever, em.as_string())
+#     #     context = ssl.create_default_context()
 
-    # except:
-    #     print(email_reciever)
-    #     print("incorrect automation")
-    return render_template("paymentconfirmation.html")
+#     #     with smtplib.SMTP_SSL('smtp.gmail.com',465,context=context) as smtp:
+#     #         smtp.login(email_sender, email_password)
+#     #         smtp.sendmail(email_sender, email_reciever, em.as_string())
+
+#     # except:
+#     #     print(email_reciever)
+#     #     print("incorrect automation")
+#     return render_template("paymentconfirmation.html")
 
 
 @web.route("/Resources/")
