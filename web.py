@@ -173,6 +173,7 @@ def successfulPayment():
     database_cursor = database_connection.cursor()
 
     executing = "insert into Registration (PatientName,ParentName,AppointmentDate,DateofBirth,ChildAge,Vaccine,Slot,Doctor,MobileNumber,Email) values ('"+childname+"','"+parentname+"','"+appointmentdate+"','"+dob+"',"+childage+",'"+selectedVaccine+"','"+selectedSlot+"','"+selectedDoctor+"',"+phoneNo+",'"+emailadd+"');"
+    
     print(executing)
     try:
         print("Enter into the try")
