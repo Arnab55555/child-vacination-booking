@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session,get_flashed_messages
 import tkinter
 from tkinter import *
-# import sqlite3
+import sqlite3
 import os
 import email
 from email.message import EmailMessage
@@ -90,6 +90,14 @@ def registering():
     dob = request.form['dob']
     global childage
     childage = request.form['Age']
+    global selectedVaccine
+    selectedVaccine = request.form['vaccine']
+    global selectedSlot
+    selectedSlot = request.form['slot']
+    global selectedDoctor
+    selectedDoctor = request.form['doctor']
+    global phoneNo
+    phoneNo = request.form['phone-no']
     global emailadd
     emailadd = request.form['em']
     return render_template('paymentconfirmation.html')
@@ -151,8 +159,30 @@ def contactUs():
 
 @web.route("/successful payment/")
 def successfulPayment():
+    print(childname)
     print(parentname)
     print(appointmentdate)
+    print(dob)
+    print(childage)
+    print(selectedVaccine)
+    print(selectedSlot)
+    print(selectedDoctor)
+    print(phoneNo)
+
+    database_connection = sqlite3.connect("Vaccination.db")
+    database_cursor = database_connection.cursor()
+
+    executing = "insert into Registration (PatientName,ParentName,AppointmentDate,DateofBirth,ChildAge,Vaccine,Slot,Doctor,MobileNumber,Email) values ('"+childname+"','"+parentname+"','"+appointmentdate+"','"+dob+"',"+childage+",'"+selectedVaccine+"','"+selectedSlot+"','"+selectedDoctor+"',"+phoneNo+",'"+emailadd+"');"
+    print(executing)
+    try:
+        print("Enter into the try")
+        database_cursor.execute(executing)
+        database_connection.commit()
+        database_connection.close()
+    except:
+        print("Bad Luck! Not Able to add Data in the database")
+
+
     email_reciever = emailadd
     try:
 
@@ -195,11 +225,7 @@ if __name__=="__main__":
 
 
 
-# database_connection = sqlite3.connect("Vaccination.db")
-# database_cursor = database_connection.cursor()
-# inputData = database_cursor.execute("")
-# database_connection.commit()
-# database_connection.close()
+
 
 
 
