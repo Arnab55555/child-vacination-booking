@@ -95,7 +95,7 @@ def registering():
     global selectedSlot
     selectedSlot = request.form['slot']
     global selectedDoctor
-    selectedDoctor = request.form['doctor']
+    selectedDoctor = request.form['centre']
     global phoneNo
     phoneNo = request.form['phone-no']
     global emailadd
